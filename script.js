@@ -1,8 +1,4 @@
-const choices = new Map([
-    [0, "rock"],
-    [1, "paper"],
-    [2, "scissors"]
-]);
+const choices = ['scissors', 'rock', 'paper']
 const rules = {
     rock: "scissors",
     paper: "rock",
@@ -10,7 +6,7 @@ const rules = {
 };
 humanScore = 0, computerScore = 0;
 for (let i = 0; i < 5; i++){
-    let getComputerchoice = () => choices.get(Math.floor(Math.random() * 3))
+    let getComputerchoice = () => choices[Math.floor(Math.random() * 3)]
     let getHumanChoice = () => ((prompt("Rock, Paper, or Scissors?")).toLowerCase())
     let playRound = (computerChoice, humanChoice) => humanChoice == computerChoice ? "Tie" : rules[humanChoice] == computerChoice ? "Win" : "Loss"
     let display = (s) => s[0].toUpperCase() + s.slice(1)
