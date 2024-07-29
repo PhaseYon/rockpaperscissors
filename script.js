@@ -9,7 +9,7 @@ const rules = {
     scissors: "paper"
 };
 humanScore = 0, computerScore = 0;
-while(1){
+for (let i = 0; i < 5; i++){
     let getComputerchoice = () => choices.get(Math.floor(Math.random() * 3))
     let getHumanChoice = () => ((prompt("Rock, Paper, or Scissors?")).toLowerCase())
     let playRound = (computerChoice, humanChoice) => humanChoice == computerChoice ? "Tie" : rules[humanChoice] == computerChoice ? "Win" : "Loss"
