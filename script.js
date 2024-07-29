@@ -6,12 +6,10 @@ const rules = {
 };
 humanScore = 0, computerScore = 0;
 for (let i = 0; i < 5; i++){
-    let getComputerchoice = () => choices[Math.floor(Math.random() * 3)]
-    let getHumanChoice = () => ((prompt("Rock, Paper, or Scissors?")).toLowerCase())
-    let playRound = (computerChoice, humanChoice) => humanChoice == computerChoice ? "Tie" : rules[humanChoice] == computerChoice ? "Win" : "Loss"
+    let computerChoice = choices[Math.floor(Math.random() * 3)]
+    let humanChoice = ((prompt("Rock, Paper, or Scissors?")).toLowerCase())
+    let result = humanChoice == computerChoice ? "Tie" : rules[humanChoice] == computerChoice ? "Win" : "Loss"
     let display = (s) => s[0].toUpperCase() + s.slice(1)
-    let humanChoice = getHumanChoice(), computerChoice = getComputerchoice();
-    result = playRound(computerChoice, humanChoice)
     result == 'Win' ? humanScore++ : result == 'Loss' ? computerScore++ : void 0
     console.log(`Round: ${result}\nHuman - ${display(humanChoice)}\nComputer - ${display(computerChoice)}\nScore: ${humanScore} - ${computerScore}`);
 }
